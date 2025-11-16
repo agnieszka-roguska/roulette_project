@@ -36,10 +36,12 @@ def main():
             else:
                 if current_money <= 0:
                     print("GAME OVER! You lost :<<<<<<< ")
+                    sleep(10)
                     break
                 print("You lost! Next bet will be doubled: ", current_bet, "\n\n")
             if game_counter == 4:
                 print("That was your 5th game, thank you for playing! ")
+                sleep(10)
 
 if __name__ == "__main__":
     main()
