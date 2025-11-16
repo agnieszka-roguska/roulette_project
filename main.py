@@ -34,14 +34,17 @@ def main():
                 print("You won! Resetting bet.\n\n")
                 current_bet = 0
             else:
-                if current_money <= 0:
-                    print("GAME OVER! You lost :<<<<<<< ")
-                    sleep(10)
-                    break
                 print("You lost! Next bet will be doubled: ", current_bet, "\n\n")
+                if current_bet > current_money:
+                    current_money = 0
+                    print("You don't have enough money to place a bet")
             if game_counter == 4:
                 print("That was your 5th game, thank you for playing! ")
                 sleep(10)
+            if current_money <= 0:
+                print("You ran out of money. GAME OVER! You lost :<<<<<<< ")
+                sleep(10)
+                break
 
 if __name__ == "__main__":
     main()
