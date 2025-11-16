@@ -33,27 +33,6 @@ def bet_money(current_money : int) -> int:
         except:
             print("Incorrect input, please try again. ")
 
-"""def inside_bets() -> list[int]:
-    x = 1
-    while x:
-        chosen_numbers = input("Enter the guessed numbers. You shall enter up to 3 numbers - only positive ones, separated by comma ")
-        chosen_numbers = chosen_numbers.replace(" ", "").replace(",", " ").split(" ")
-        #chosen_numbers = chosen_numbers[:3]
-        try: 
-            chosen_numbers_ints = list(map(lambda x : abs(int(x)), chosen_numbers))
-        except: 
-            print("You've entered incorrect values, try again... ")
-            continue
-        
-        if 0 in chosen_numbers_ints:
-            print("You can't bet on 0. Try again... ")
-        else: 
-            x = 0
-    values =  ["BLACK" if number % 2 == 0 else "RED" for number in chosen_numbers_ints]
-    chosen_numbers = [str(x) for x in chosen_numbers_ints]
-    result = list(zip(chosen_numbers, values))
-    return result"""
-
 def inside_bets_only_ints() -> list[int]:
     x = 1
     while x:

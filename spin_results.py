@@ -22,33 +22,7 @@ def spin_results_announce(spin_results):
     print("The wheel is spinning...")
     sleep(10)
     print(f"Results: \n \t number: \t {number} \n\t colour: \t{colour}\n\t high/low: \t{high_low} \n\t dozen: \t{dozen} \n\t column: \t{column}")
-
-
-"""def check_results_inside_bets(bet_money : int, spin_result : tuple[int, str], guessed_numbers : list[tuple[str, str]]) -> tuple[int, str]:
-    guessed_numbers = [str(x) for x in guessed_numbers]
-    spinned_number = spin_result[0]
-    #numbers_only = [int(num) for num, _ in guessed_numbers]
-    if spinned_number == 0:
-        win = -bet_money
-        next_money = 2 * bet_money
-    elif spinned_number in guessed_numbers:
-        next_money = 0
-        match len(guessed_numbers):
-            case 1:
-                win = 35 * bet_money
-            case 2:
-                win = 17 * bet_money
-            case 3:
-                win = 3 * bet_money
-    else: 
-        print(type(spinned_number))
-        print(spinned_number in guessed_numbers)
-        win = -bet_money
-        next_money = 2 * bet_money
     
-    return win, next_money"""
-    
-
 def check_results_inside_bets(bet_money : int, spin_result : tuple[int, str], guessed_numbers : list[int]) -> tuple[int, str]:
     spinned_number = spin_result[0]
     if spinned_number == 0:
@@ -81,12 +55,14 @@ def check_results_outside_bets(bet_money : int, spin_result : tuple[str, str], o
     condition_3 = (bet_dozen == functions.which_dozen(spinned_number))
     condition_4 = (bet_column == functions.which_column(spinned_number))
 
-    print(condition_1, condition_2, condition_3, condition_4)
+    if (spinned_number == 0):
+        spin_results_announce(spin_result)
+        return (-1) * bet_money, 2 * bet_money
 
     if (condition_1 or condition_2): #OK
         result = bet_money, bet_money
     elif (condition_3 or condition_4):
-        result = 2 * bet_money, bet_money
+        result = bet_money, bet_money
     else:
         result = (-1) * bet_money, 2 * bet_money
 
