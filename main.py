@@ -38,8 +38,8 @@ def main():
                     print("GAME OVER! You lost :<<<<<<< ")
                     break
                 print("You lost! Next bet will be doubled: ", current_bet, "\n\n")
-
-    print("That was your 5th game, thank you for playing! ")
+            if game_counter == 4:
+                print("That was your 5th game, thank you for playing! ")
 
 if __name__ == "__main__":
     main()
