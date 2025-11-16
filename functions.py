@@ -4,10 +4,10 @@ def low_or_high_check(number : int) -> str:
     else:
         return "HIGH"
 
-def which_column(number):
-    column_1 = range(1, 35, 3)
-    column_2 = range(2, 36, 3)
-    column_3 = range(3, 36, 3)
+def which_column(number : int) -> int:
+    column_1 = range(1, 37, 3)
+    column_2 = range(2, 37, 3)
+    column_3 = range(3, 37, 3)
 
     if number in column_1:
         return 1
@@ -17,7 +17,7 @@ def which_column(number):
         return 3
     else:
         return -1
-def which_dozen(number):
+def which_dozen(number : int) -> int:
     dozen_1 = range(1, 13)
     dozen_2 = range(13, 25)
     dozen_3 = range(25, 37)
